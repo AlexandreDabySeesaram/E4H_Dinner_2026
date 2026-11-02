@@ -109,7 +109,7 @@ Lung poro-mechanics - two scales
 
 * **Macro**: finite-strain **poro-mechanical** model of the parenchyma [@patteQuasistaticPoromechanicalModel2022;@peyrautQuantificationDincertitudesPour2024a]
   * Solid skeleton + air, hyperelastic potentials $\Psi_s\left(\matrice{E}, \Phi_s\right)$
-* **Micro**: alveolar microstructure ([@manoochehrtayebiFiniteStrainMicroporomechanics2025])
+* **Micro**: alveolar microstructure [@manoochehrtayebiFiniteStrainMicroporomechanics2025]
   * Blood perfusion (**Haotian Xiao**)
 * **Pleural pressure**: data-driven reduced model (**Felipe Álvarez-Barrientos**)
 
