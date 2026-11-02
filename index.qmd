@@ -1,0 +1,250 @@
+---
+title: "Towards real-time digital twins of the human lungs"
+subtitle: "E4H Diner - Lung Digital twin"
+date: 11/02/2026
+author: 
+    - name: Martin Genet <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0003-2204-201X)</span></sup>
+      email: martin.genet@polytechnique.edu
+      affiliations:
+        - ref: lms
+    - name: Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-2374-0971)</span></sup>
+      email: alexandre.daby-seesaram@polytechnique.edu
+      affiliations:
+        - ref: ensta
+    - name: <span style="font-size:0.8em; font-weight:normal">With Alice Peyraut, Mahdi Manoochehrtayebi, Katerina Skardova, Cécile Patte, Haotian Xiao and Felipe Álvarez-Barrientos</span>
+affiliations:
+- id: lms
+  name: LMS, École Polytechnique, IP Paris, France
+- id: ensta
+  name: LMI, ENSTA, IP Paris, France
+---
+
+## Why a lung digital twin ?
+
+{{< include Template/my_notations.qmd >}}
+{{< include Template/my_colours.qmd >}}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![Inspiration & expiration of diseased lungs](Figures/Movies/lung-im.mp4){ height="250" loop="true" autoplay=true}
+
+:::
+
+::: {.column width="50%"}
+
+![Digital twin from images](Figures/Movies/Lungs_digital_twin.mp4){ height="250" loop="true" autoplay=true}
+
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::: {.mybox}
+
+::: {.mybox-header}
+Objectives
+:::
+
+::: {.mybox-body}
+
+* Improved understanding of the **mechanically-driven** physiological mechanisms
+  * *e.g.* fibrosis, ventilation, perfusion
+* *In silico* prognostics
+  * Transfer tools to the clinic
+  * Patient-specific **digital twins**
+
+:::
+
+::::
+
+:::
+
+::: {.column width="50%"}
+
+:::: {.mybox}
+
+::: {.mybox-header}
+Requirements
+:::
+
+::: {.mybox-body}
+
+:::: {style='margin-top: 2.6em;'}
+::::
+
+* [Mechanical model of the lung]{.positive}
+* [Image-based personalisation & uncertainty quantification]{.warning}
+* [**Real-time** estimation of the parameters]{.important}
+
+:::: {style='margin-top: 2.7em;'}
+::::
+
+:::
+
+::::
+
+:::
+
+::::
+
+
+## Modelling & image-based personalisation
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::: {.mybox}
+
+::: {.mybox-header}
+Lung poro-mechanics - two scales
+:::
+
+::: {.mybox-body}
+
+* **Macro**: finite-strain **poro-mechanical** model of the parenchyma [@patteQuasistaticPoromechanicalModel2022;@peyrautQuantificationDincertitudesPour2024a]
+  * Solid skeleton + air, hyperelastic potentials $\Psi_s\left(\matrice{E}, \Phi_s\right)$
+* **Micro**: alveolar microstructure ([@manoochehrtayebiFiniteStrainMicroporomechanics2025])
+  * Double porosity, perfusion (**Haotian Xiao**)
+* **Pleural pressure**: data-driven reduced model (**Felipe Álvarez-Barrientos**)
+
+:::
+
+::::
+
+![Fibrosed zones [@peyrautQuantificationDincertitudesPour2024a]](Figures/fibrosed.png){ width="40%" fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+:::: {.mybox}
+
+::: {.mybox-header}
+Motion tracking & personalisation
+:::
+
+::: {.mybox-body}
+
+* **Equilibrated warping** [@genetEquilibratedWarpingFinite2018]
+  * Finite element image registration
+  * Mechanically regularised (equilibrium gap)
+* Patient-specific estimation of regional compliance [@lavilleComparisonOptimizationParametrizations2023]
+* Uncertainty quantification [@peyrautQuantificationDincertitudesPour2024a]
+
+:::: {style='margin-top: 1.25em;'}
+::::
+
+:::
+
+::::
+
+![Tracking of the lung motion from CT images](Figures/Movies/tracking_3D_lung_raw.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
+
+:::
+
+::::
+
+
+## Towards real-time digital twins
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+<div style="width:395px; height:270px; overflow:hidden; margin:auto;">
+<iframe src="https://alexandredabyseesaram.github.io/Resources/AR/Breathing_ROM_SVK.html" allow="fullscreen" style="border:none; width:760px; height:520px; max-width:none; max-height:none; transform:scale(0.52); transform-origin:0 0;"></iframe>
+</div>
+
+[Patient-specific parametrised simulation]{style="font-size:0.5em"}
+
+:::
+
+::: {.column width="17%"}
+
+![](Figures/Neurom_architecture.svg){ height="230" fig-align="center"}
+
+:::
+
+::: {.column width="28%"}
+
+![Shape model from CT scans](Figures/Movies/Reduced+Full_kinematics.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
+
+:::
+
+::::
+
+:::: {style='margin-top: -2em;'}
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::: {.mybox}
+
+::: {.mybox-header}
+Surrogate modelling - NeuROM
+:::
+
+::: {.mybox-body}
+
+* **Interpretable** reduced-order scheme (hybrid FE / NN-PGD)
+  * [@skardovaFiniteElementNeural2025;@daby-seesaramFiniteElementNeural2025]
+* Parametrised solution learned **offline** as a PGD approximation
+  * Material, loading **and patient shape** parameters
+
+$$
+\vect{u}\left(\textcolor{Blue}{\vect{x}}, \textcolor{LGreen}{\para}\right) = \sum\limits_{i=1}^m \textcolor{Blue}{\overline{\vect{u}}_i(\vect{x})} ~\textcolor{LGreen}{\prod_{j=1}^{\beta}\lambda_i^j(\mu^j)}
+$$
+
+* **On-the-fly** evaluation online: real-time simulation
+
+
+:::
+
+::::
+
+:::
+
+::: {.column width="50%"}
+
+:::: {.mybox}
+
+::: {.mybox-header}
+Enriching the digital twin
+:::
+
+::: {.mybox-body}
+
+:::: {style='margin-top: 3.3em;'}
+::::
+
+* **Micro-buckling** of the alveolar walls (PhD: **Solal Espic**)
+  * Account for alveolar collapse & step towards multi-scale DT
+* **Pleural pressure model** in the DT (PhD: **Salvador Gonzalez**)
+  * State-of-the-art macro model incorporated in the DT
+* Applications: diagnostics, prognostics, control of medical devices
+
+
+:::: {style='margin-top: 3.3em;'}
+::::
+
+:::
+
+::::
+
+:::
+
+::::
+
+
+## References {visibility="uncounted"}
+
+::: {#refs}
+:::
