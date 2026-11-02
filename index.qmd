@@ -3,14 +3,14 @@ title: "Towards real-time digital twins of the human lungs"
 subtitle: "E4H Diner - Lung Digital twin"
 date: 11/02/2026
 author: 
-    - name: Martin Genet <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0003-2204-201X)</span></sup>
-      email: martin.genet@polytechnique.edu
-      affiliations:
-        - ref: lms
     - name: Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-2374-0971)</span></sup>
       email: alexandre.daby-seesaram@polytechnique.edu
       affiliations:
         - ref: ensta
+    - name: Martin Genet <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0003-2204-201X)</span></sup>
+      email: martin.genet@polytechnique.edu
+      affiliations:
+        - ref: lms
     - name: <span style="font-size:0.8em; font-weight:normal">With Alice Peyraut, Mahdi Manoochehrtayebi, Katerina Skardova, Cécile Patte, Haotian Xiao and Felipe Álvarez-Barrientos</span>
 affiliations:
 - id: lms
@@ -110,7 +110,7 @@ Lung poro-mechanics - two scales
 * **Macro**: finite-strain **poro-mechanical** model of the parenchyma [@patteQuasistaticPoromechanicalModel2022;@peyrautQuantificationDincertitudesPour2024a]
   * Solid skeleton + air, hyperelastic potentials $\Psi_s\left(\matrice{E}, \Phi_s\right)$
 * **Micro**: alveolar microstructure ([@manoochehrtayebiFiniteStrainMicroporomechanics2025])
-  * Double porosity, perfusion (**Haotian Xiao**)
+  * Blood perfusion (**Haotian Xiao**)
 * **Pleural pressure**: data-driven reduced model (**Felipe Álvarez-Barrientos**)
 
 :::
@@ -194,7 +194,7 @@ Surrogate modelling - NeuROM
 
 ::: {.mybox-body}
 
-* **Interpretable** reduced-order scheme (hybrid FE / NN-PGD)
+* **Interpretable** reduced-order model (hybrid FE / NN-PGD)
   * [@skardovaFiniteElementNeural2025;@daby-seesaramFiniteElementNeural2025]
 * Parametrised solution learned **offline** as a PGD approximation
   * Material, loading **and patient shape** parameters
