@@ -11,7 +11,7 @@ author:
       email: martin.genet@polytechnique.edu
       affiliations:
         - ref: lms
-    - name: <span style="font-size:0.8em; font-weight:normal">With Cécile Patte, Mahdi Manoochehrtayebi, Alice Peyraut, Katerina Skardova, Haotian Xiao and Felipe Álvarez-Barrientos</span>
+    - name: <span style="font-size:0.8em; font-weight:normal">With Dominique Chapelle, Cécile Patte, Colin Laville, Mahdi Manoochehrtayebi, Alice Peyraut, Katerina Skardova, Felipe Álvarez-Barrientos and Haotian Xiao</span>
 affiliations:
 - id: lms
   name: LMS, École Polytechnique, IP Paris, France
