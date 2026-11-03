@@ -13,8 +13,8 @@
   <meta name="author" content="Alexandre Daby-Seesaram ">
   <meta name="author" content="Martin Genet ">
   <meta name="author" content="With Alice Peyraut, Mahdi Manoochehrtayebi, Katerina Skardova, Cécile Patte, Haotian Xiao and Felipe Álvarez-Barrientos">
-  <meta name="dcterms.date" content="2026-11-02">
-  <title>Towards real-time digital twins of the human lungs</title>
+  <meta name="dcterms.date" content="2026-11-05">
+  <title>Lung modelling and digital twin</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -158,8 +158,8 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="Template/BG.svg" class="quarto-title-block center">
-  <h1 class="title">Towards real-time digital twins of the human lungs</h1>
-  <p class="subtitle">E4H Diner - Lung Digital twin</p>
+  <h1 class="title">Lung modelling and digital twin</h1>
+  <p class="subtitle">E4H Diner 2026</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -191,10 +191,10 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </div>
 </div>
 
-  <p class="date">November 2, 2026</p>
+  <p class="date">November 5, 2026</p>
 </section>
-<section id="why-a-lung-digital-twin" class="slide level2">
-<h2>Why a lung digital twin ?</h2>
+<section id="why-a-lung-digital-twin-dt" class="slide level2">
+<h2>Why a lung digital twin (DT)?</h2>
 <p><span class="math display">\[
 \definecolor{Violet}{RGB}{162, 32, 185}
 \definecolor{Teal}{RGB}{0, 103, 127}
@@ -245,15 +245,25 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 <p>Requirements</p>
 </div>
 <div class="mybox-body">
-<div style="margin-top: 2.6em;">
+<div style="margin-top: 2em;">
 
 </div>
+<div class="fragment fade-in" data-fragment-index="1">
 <ul>
-<li><span class="positive">Mechanical model of the lung</span></li>
-<li><span class="warning">Image-based personalisation &amp; uncertainty quantification</span></li>
-<li><span class="important"><strong>Real-time</strong> estimation of the parameters</span></li>
+<li><span class="positive">1) Mechanical model of the lung</span></li>
 </ul>
-<div style="margin-top: 2.7em;">
+</div>
+<div class="fragment fade-in">
+<ul>
+<li><span class="warning">2) Image-based personalisation &amp; uncertainty quantification</span></li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li><span class="important">3) <strong>Real-time</strong> estimation of the parameters</span></li>
+</ul>
+</div>
+<div style="margin-top: 1.9em;">
 
 </div>
 </div>
@@ -270,25 +280,26 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </div>
 <div class="mybox-body">
 <ul>
-<li><strong>Macro</strong>: finite-strain <strong>poro-mechanical</strong> model of the parenchyma <span class="citation" data-cites="patteQuasistaticPoromechanicalModel2022 peyrautQuantificationDincertitudesPour2024a">(<a href="#/references" role="doc-biblioref" onclick="">Patte et al., 2022</a>; <a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024</a>)</span>
+<li><strong>Macro</strong>: finite-strain <strong>poro-mechanical</strong> model of the parenchyma <span class="citation" data-cites="patteQuasistaticPoromechanicalModel2022 peyrautModelMechanicalLoading2024a">(<a href="#/references" role="doc-biblioref" onclick="">Patte et al., 2022</a>; <a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024a</a>)</span>
 <ul>
 <li>Solid skeleton + air, hyperelastic potentials <span class="math inline">\(\Psi_s\left(\boldsymbol{E}, \Phi_s\right)\)</span></li>
+<li><strong>Pleural pressure</strong>: data-driven reduced-order model (<strong>Felipe Álvarez-Barrientos</strong>)</li>
 </ul></li>
 <li><strong>Micro</strong>: alveolar microstructure <span class="citation" data-cites="manoochehrtayebiFiniteStrainMicroporomechanics2025">(<a href="#/references" role="doc-biblioref" onclick="">Manoochehrtayebi et al., 2025</a>)</span>
 <ul>
 <li>Blood perfusion (<strong>Haotian Xiao</strong>)</li>
 </ul></li>
-<li><strong>Pleural pressure</strong>: data-driven reduced model (<strong>Felipe Álvarez-Barrientos</strong>)</li>
 </ul>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Figures/fibrosed.png" style="width:40.0%"></p>
-<figcaption>Fibrosed zones <span class="citation" data-cites="peyrautQuantificationDincertitudesPour2024a">(<a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024</a>)</span></figcaption>
+<figcaption>Fibrosed zones <span class="citation" data-cites="peyrautQuantificationDincertitudesPour2024a">(<a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024b</a>)</span></figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
 <div class="mybox">
 <div class="mybox-header">
 <p>Motion tracking &amp; personalisation</p>
@@ -301,7 +312,7 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 <li>Mechanically regularised (equilibrium gap)</li>
 </ul></li>
 <li>Patient-specific estimation of regional compliance <span class="citation" data-cites="lavilleComparisonOptimizationParametrizations2023">(<a href="#/references" role="doc-biblioref" onclick="">Laville et al., 2023</a>)</span></li>
-<li>Uncertainty quantification <span class="citation" data-cites="peyrautQuantificationDincertitudesPour2024a">(<a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024</a>)</span></li>
+<li>Uncertainty quantification <span class="citation" data-cites="peyrautQuantificationDincertitudesPour2024a">(<a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024b</a>)</span></li>
 </ul>
 <div style="margin-top: 1.25em;">
 
@@ -310,9 +321,9 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><video data-src="Figures/Movies/tracking_3D_lung_raw.mp4" loop="true" autoplay="true" height="230" controls=""><a href="Figures/Movies/tracking_3D_lung_raw.mp4">Video</a></video></p>
-<figcaption>Tracking of the lung motion from CT images</figcaption>
+<p><video data-src="Figures/Movies/tracking_3D_lung_raw.mp4" class="quarto-figure quarto-figure-center" loop="true" autoplay="true" height="230" controls=""><a href="Figures/Movies/tracking_3D_lung_raw.mp4">Video</a></video></p>
 </figure>
+</div>
 </div>
 </div></div>
 </section>
@@ -324,7 +335,7 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 <iframe src="https://alexandredabyseesaram.github.io/Resources/AR/Breathing_ROM_SVK.html" allow="fullscreen" style="border:none; width:760px; height:520px; max-width:none; max-height:none; transform:scale(0.52); transform-origin:0 0;">
 </iframe>
 </div>
-<p><span style="font-size:0.5em">Patient-specific parametrised simulation</span></p>
+<p><span style="font-size:0.5em"></span></p>
 </div><div class="column" style="width:17%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -334,8 +345,7 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </div><div class="column" style="width:28%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><video data-src="Figures/Movies/Reduced+Full_kinematics.mp4" loop="true" autoplay="true" height="230" controls=""><a href="Figures/Movies/Reduced+Full_kinematics.mp4">Video</a></video></p>
-<figcaption>Shape model from CT scans</figcaption>
+<p><video data-src="Figures/Movies/Reduced+Full_kinematics.mp4" class="quarto-figure quarto-figure-center" loop="true" autoplay="true" height="230" controls=""><a href="Figures/Movies/Reduced+Full_kinematics.mp4">Video</a></video></p>
 </figure>
 </div>
 </div></div>
@@ -412,8 +422,11 @@ Manoochehrtayebi, M., Bel-Brunon, A., &amp; Genet, M. (2025). Finite strain micr
 <div id="ref-patteQuasistaticPoromechanicalModel2022" class="csl-entry" role="listitem">
 Patte, C., Genet, M., &amp; Chapelle, D. (2022). A quasi-static poromechanical model of the lungs. <em>Biomechanics and Modeling in Mechanobiology</em>, <em>21</em>(2), 527–551. <a href="https://doi.org/10.1007/s10237-021-01547-0">https://doi.org/10.1007/s10237-021-01547-0</a>
 </div>
+<div id="ref-peyrautModelMechanicalLoading2024a" class="csl-entry" role="listitem">
+Peyraut, A., &amp; Genet, M. (2024a). A model of mechanical loading of the lungs including gravity and a balancing heterogeneous pleural pressure. <em>Biomechanics and Modeling in Mechanobiology</em>. <a href="https://doi.org/10.1007/s10237-024-01876-w">https://doi.org/10.1007/s10237-024-01876-w</a>
+</div>
 <div id="ref-peyrautQuantificationDincertitudesPour2024a" class="csl-entry" role="listitem">
-Peyraut, A., &amp; Genet, M. (2024). <em><span>Quantification d’incertitudes pour la modélisation pulmonaire per- sonnalisée</span></em>.
+Peyraut, A., &amp; Genet, M. (2024b). <em><span>Quantification d’incertitudes pour la modélisation pulmonaire per- sonnalisée</span></em>.
 </div>
 <div id="ref-skardovaFiniteElementNeural2025" class="csl-entry" role="listitem">
 Škardová, K., Daby-Seesaram, A., &amp; Genet, M. (2025). Finite element neural network interpolation: <span>Part I</span>—interpretable and adaptive discretization for solving <span>PDEs</span>. <em>Computational Mechanics</em>. <a href="https://doi.org/10.1007/s00466-025-02677-3">https://doi.org/10.1007/s00466-025-02677-3</a>
