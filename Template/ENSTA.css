@@ -90,3 +90,5 @@
 /* Title slide: put the last "author" (team members line) on its own row below */
 .reveal .quarto-title-block .quarto-title-authors { flex-wrap: wrap; }
 .reveal .quarto-title-block .quarto-title-authors .quarto-title-author:last-child { flex-basis: 100%; margin-top: 0.6em; }
+/* Title slide only: scale the whole title block up */
+.reveal section#title-slide { zoom: 1.3; margin-top: -60px; }
