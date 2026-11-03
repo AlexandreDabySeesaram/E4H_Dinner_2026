@@ -1,7 +1,7 @@
 ---
-title: "Towards real-time digital twins of the human lungs"
-subtitle: "E4H Diner - Lung Digital twin"
-date: 11/02/2026
+title: "Lung modelling and digital twin"
+subtitle: "E4H Diner 2026"
+date: 11/05/2026
 author: 
     - name: Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff">[{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-2374-0971)</span></sup>
       email: alexandre.daby-seesaram@polytechnique.edu
@@ -19,7 +19,7 @@ affiliations:
   name: LMI, ENSTA, IP Paris, France
 ---
 
-## Why a lung digital twin ?
+## Why a lung digital twin (DT)?
 
 {{< include Template/my_notations.qmd >}}
 {{< include Template/my_colours.qmd >}}
@@ -74,14 +74,24 @@ Requirements
 
 ::: {.mybox-body}
 
-:::: {style='margin-top: 2.6em;'}
+:::: {style='margin-top: 2em;'}
 ::::
 
-* [Mechanical model of the lung]{.positive}
-* [Image-based personalisation & uncertainty quantification]{.warning}
-* [**Real-time** estimation of the parameters]{.important}
+::: {.fragment fragment-index=1 .fade-in}
 
-:::: {style='margin-top: 2.7em;'}
+* [1) Mechanical model of the lung]{.positive}
+:::
+
+::: {.fragment .fade-in}
+* [2) Image-based personalisation & uncertainty quantification]{.warning}
+
+:::
+
+::: {.fragment .fade-in}
+* [3) **Real-time** estimation of the parameters]{.important}
+:::
+
+:::: {style='margin-top: 1.9em;'}
 ::::
 
 :::
@@ -107,11 +117,11 @@ Lung poro-mechanics - two scales
 
 ::: {.mybox-body}
 
-* **Macro**: finite-strain **poro-mechanical** model of the parenchyma [@patteQuasistaticPoromechanicalModel2022;@peyrautQuantificationDincertitudesPour2024a]
+* **Macro**: finite-strain **poro-mechanical** model of the parenchyma [@patteQuasistaticPoromechanicalModel2022;@peyrautModelMechanicalLoading2024a]
   * Solid skeleton + air, hyperelastic potentials $\Psi_s\left(\matrice{E}, \Phi_s\right)$
+  * **Pleural pressure**: data-driven reduced-order model (**Felipe Álvarez-Barrientos**)
 * **Micro**: alveolar microstructure [@manoochehrtayebiFiniteStrainMicroporomechanics2025]
   * Blood perfusion (**Haotian Xiao**)
-* **Pleural pressure**: data-driven reduced model (**Felipe Álvarez-Barrientos**)
 
 :::
 
@@ -122,6 +132,9 @@ Lung poro-mechanics - two scales
 :::
 
 ::: {.column width="50%"}
+
+::::: {.fragment .fade-in}
+
 
 :::: {.mybox}
 
@@ -144,9 +157,11 @@ Motion tracking & personalisation
 
 ::::
 
-![Tracking of the lung motion from CT images](Figures/Movies/tracking_3D_lung_raw.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
+![](Figures/Movies/tracking_3D_lung_raw.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
 
 :::
+
+:::::
 
 ::::
 
@@ -161,7 +176,7 @@ Motion tracking & personalisation
 <iframe src="https://alexandredabyseesaram.github.io/Resources/AR/Breathing_ROM_SVK.html" allow="fullscreen" style="border:none; width:760px; height:520px; max-width:none; max-height:none; transform:scale(0.52); transform-origin:0 0;"></iframe>
 </div>
 
-[Patient-specific parametrised simulation]{style="font-size:0.5em"}
+[]{style="font-size:0.5em"}
 
 :::
 
@@ -173,7 +188,7 @@ Motion tracking & personalisation
 
 ::: {.column width="28%"}
 
-![Shape model from CT scans](Figures/Movies/Reduced+Full_kinematics.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
+![](Figures/Movies/Reduced+Full_kinematics.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
 
 :::
 
