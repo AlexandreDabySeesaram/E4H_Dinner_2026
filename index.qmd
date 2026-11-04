@@ -55,7 +55,7 @@ Objectives
 * Improved understanding of the **mechanically-driven** physiological mechanisms
   * *e.g.* fibrosis, ventilation, perfusion
 * *In silico* prognostics
-  * Transfer tools to the clinic
+  * Transfer tools to the clinic (Avicenne APHP)
   * Patient-specific **digital twins**
 
 :::
@@ -126,6 +126,7 @@ Lung poro-mechanics - two scales
 :::
 
 ::::
+
 
 :::: {.columns}
 
