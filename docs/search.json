@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html#why-a-lung-digital-twin-dt",
+    "href": "index.html#why-a-lung-digital-twin-dt",
+    "title": "Lung modelling and digital twin",
+    "section": "Why a lung digital twin (DT)?",
+    "text": "Why a lung digital twin (DT)?\n\\[\n\\definecolor{Violet}{RGB}{162, 32, 185}\n\\definecolor{Teal}{RGB}{0, 103, 127}\n\\definecolor{Blue}{RGB}{58, 70, 245}\n\\definecolor{Green}{RGB}{0,103,127}\n\\definecolor{LGreen}{RGB}{62,128,102}\n\\definecolor{red}{RGB}{206,0,55}\n\\]\n\n\n\n\nVideo\nInspiration & expiration of diseased lungs\n\n\n\n\n\nVideo\nDigital twin from images\n\n\n\n\n\n\n\nObjectives\n\n\n\nImproved understanding of the mechanically-driven physiological mechanisms\n\ne.g. fibrosis, ventilation, perfusion\n\nIn silico prognostics\n\nTransfer tools to the clinic (Avicenne APHP)\nPatient-specific digital twins\n\n\n\n\n\n\n\nRequirements\n\n\n\n\n\n\n\n1) Mechanical model of the lung\n\n\n\n\n2) Image-based personalisation & uncertainty quantification\n\n\n\n\n3) Real-time estimation of the parameters"
+  },
+  {
+    "objectID": "index.html#modelling-image-based-personalisation",
+    "href": "index.html#modelling-image-based-personalisation",
+    "title": "Lung modelling and digital twin",
+    "section": "Modelling & image-based personalisation",
+    "text": "Modelling & image-based personalisation\n\n\n\n\nLung poro-mechanics - two scales\n\n\n\nMacro: finite-strain poro-mechanical model of the parenchyma (Patte et al., 2022; Peyraut & Genet, 2024a)\n\nSolid skeleton + air, hyperelastic potentials \\(\\Psi_s\\left(\\boldsymbol{E}, \\Phi_s\\right)\\)\nPleural pressure: data-driven reduced-order model (Felipe Álvarez-Barrientos)\n\nMicro: alveolar microstructure (Manoochehrtayebi et al., 2025)\n\nBlood perfusion (Haotian Xiao)\n\n\n\n\n\n\n\n\n\n\n\n\n\nmicro modelling\n\n\n\n\n\nVideo\nmacro modelling\n\n\n\n\n\n\n\nMotion tracking & personalisation\n\n\n\nEquilibrated warping (Genet et al., 2018)\n\nFinite element image registration\nMechanically regularised (equilibrium gap)\n\nPatient-specific estimation of regional compliance (Laville et al., 2023)\nUncertainty quantification (Peyraut & Genet, 2024b)\n\n\n\n\n\n\n\n\nVideo"
+  },
+  {
+    "objectID": "index.html#towards-real-time-digital-twins",
+    "href": "index.html#towards-real-time-digital-twins",
+    "title": "Lung modelling and digital twin",
+    "section": "Towards real-time digital twins",
+    "text": "Towards real-time digital twins\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVideo\n\n\n\n\n\n\n\n\n\n\nSurrogate modelling - NeuROM\n\n\n\nInterpretable reduced-order model (hybrid FE / NN-PGD)\n\n(Daby-Seesaram et al., 2025; Škardová et al., 2025)\n\nParametrised solution learned offline as a PGD approximation\n\nMaterial, loading and patient shape parameters\n\n\n\\[\n\\boldsymbol{u}\\left(\\textcolor{Blue}{\\boldsymbol{x}}, \\textcolor{LGreen}{\\left\\{\\mu_i\\right\\}_{i \\in \\mathopen{~[\\!\\![~}1, \\beta  \\mathclose{~]\\!\\!]}}}\\right) = \\sum\\limits_{i=1}^m \\textcolor{Blue}{\\overline{\\boldsymbol{u}}_i(\\boldsymbol{x})} ~\\textcolor{LGreen}{\\prod_{j=1}^{\\beta}\\lambda_i^j(\\mu^j)}\n\\]\n\nOn-the-fly evaluation online: real-time simulation\n\n\n\n\n\n\nEnriching the digital twin\n\n\n\n\n\n\nMicro-buckling of the alveolar walls (PhD: Solal Espic)\n\nAccount for alveolar collapse & step towards multi-scale DT\n\nPleural pressure model in the DT (PhD: Salvador Gonzalez)\n\nState-of-the-art macro model incorporated in the DT\n\nApplications: diagnostics, prognostics, control of medical devices"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Lung modelling and digital twin",
+    "section": "References",
+    "text": "References\n\n\nDaby-Seesaram, A., Škardová, K., & Genet, M. (2025). Finite element neural network interpolation: Part II—hybridisation with the proper generalised decomposition for non-linear surrogate modelling. Computational Mechanics. https://doi.org/10.1007/s00466-025-02676-4\n\n\nGenet, M., Stoeck, C. T., von Deuster, C., Lee, L. C., & Kozerke, S. (2018). Equilibrated warping: Finite element image registration with finite strain equilibrium gap regularization. Medical Image Analysis, 50, 1–22. https://doi.org/10.1016/j.media.2018.07.007\n\n\nLaville, C., Fetita, C., Gille, T., Brillet, P.-Y., Nunes, H., Bernaudin, J.-F., & Genet, M. (2023). Comparison of optimization parametrizations for regional lung compliance estimation using personalized pulmonary poromechanical modeling. Biomechanics and Modeling in Mechanobiology, 22(5), 1541–1554. https://doi.org/10.1007/s10237-023-01691-9\n\n\nManoochehrtayebi, M., Bel-Brunon, A., & Genet, M. (2025). Finite strain micro-poro-mechanics: Formulation and compared analysis with macro-poro-mechanics. International Journal of Solids and Structures, 317, 113354. https://doi.org/10.1016/j.ijsolstr.2025.113354\n\n\nPatte, C., Genet, M., & Chapelle, D. (2022). A quasi-static poromechanical model of the lungs. Biomechanics and Modeling in Mechanobiology, 21(2), 527–551. https://doi.org/10.1007/s10237-021-01547-0\n\n\nPeyraut, A., & Genet, M. (2024a). A model of mechanical loading of the lungs including gravity and a balancing heterogeneous pleural pressure. Biomechanics and Modeling in Mechanobiology. https://doi.org/10.1007/s10237-024-01876-w\n\n\nPeyraut, A., & Genet, M. (2024b). Quantification d’incertitudes pour la modélisation pulmonaire per- sonnalisée.\n\n\nŠkardová, K., Daby-Seesaram, A., & Genet, M. (2025). Finite element neural network interpolation: Part I—interpretable and adaptive discretization for solving PDEs. Computational Mechanics. https://doi.org/10.1007/s00466-025-02677-3"
+  }
+]
