@@ -7,7 +7,10 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script><meta charset="utf-8">
+<script src="site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Alexandre Daby-Seesaram ">
@@ -233,7 +236,7 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </ul></li>
 <li><em>In silico</em> prognostics
 <ul>
-<li>Transfer tools to the clinic</li>
+<li>Transfer tools to the clinic (Avicenne APHP)</li>
 <li>Patient-specific <strong>digital twins</strong></li>
 </ul></li>
 </ul>
@@ -273,7 +276,7 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 <section id="modelling-image-based-personalisation" class="slide level2">
 <h2>Modelling &amp; image-based personalisation</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <div class="mybox">
 <div class="mybox-header">
 <p>Lung poro-mechanics - two scales</p>
@@ -292,13 +295,27 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </ul>
 </div>
 </div>
+<div class="columns">
+<div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Figures/fibrosed.png" style="width:40.0%"></p>
-<figcaption>Fibrosed zones <span class="citation" data-cites="peyrautQuantificationDincertitudesPour2024a">(<a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024b</a>)</span></figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="Schemes/micro_modelling.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="micro modelling"><img data-src="Schemes/micro_modelling.svg" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="micro modelling"></a></p>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
+<figcaption>micro modelling</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="Figures/Movies/lung_stress.mp4" style="width:100.0%" loop="true" autoplay="true" controls=""><a href="Figures/Movies/lung_stress.mp4">Video</a></video></p>
+<figcaption>macro modelling</figcaption>
+</figure>
+</div>
+</div></div>
+</div><div class="column" style="width:40%;">
 <div class="fragment fade-in">
 <div class="mybox">
 <div class="mybox-header">
@@ -321,7 +338,7 @@ Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><video data-src="Figures/Movies/tracking_3D_lung_raw.mp4" class="quarto-figure quarto-figure-center" loop="true" autoplay="true" height="230" controls=""><a href="Figures/Movies/tracking_3D_lung_raw.mp4">Video</a></video></p>
+<p><video data-src="Figures/Movies/tracking.mp4" class="quarto-figure quarto-figure-center" loop="true" autoplay="true" height="230" controls=""><a href="Figures/Movies/tracking.mp4">Video</a></video></p>
 </figure>
 </div>
 </div>
@@ -819,6 +836,38 @@ Peyraut, A., &amp; Genet, M. (2024b). <em><span>Quantification d’incertitudes 
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>
