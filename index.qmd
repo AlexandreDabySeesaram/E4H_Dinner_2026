@@ -107,7 +107,7 @@ Requirements
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 :::: {.mybox}
 
@@ -127,11 +127,22 @@ Lung poro-mechanics - two scales
 
 ::::
 
-![Fibrosed zones [@peyrautQuantificationDincertitudesPour2024a]](Figures/fibrosed.png){ width="40%" fig-align="center"}
+:::: {.columns}
+
+::: {.column width="60%"}
+![micro modelling](Schemes/micro_modelling.svg){.lightbox width="100%" fig-align="center"}
+:::
+
+::: {.column width="40%"}
+![macro modelling](Figures/Movies/lung_stress.mp4){ width="100%" loop="true" autoplay=true fig-align="center"}
+:::
+
+::::
+
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ::::: {.fragment .fade-in}
 
@@ -157,7 +168,7 @@ Motion tracking & personalisation
 
 ::::
 
-![](Figures/Movies/tracking_3D_lung_raw.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
+![](Figures/Movies/tracking.mp4){ height="230" loop="true" autoplay=true fig-align="center"}
 
 :::
 
